@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class BackupEnemyController : MonoBehaviour
 {
-    public float secondsPerDirection; // 0.9
-    public int randomToLookRatio; // 2
-    public float speedMultiplier; // 0.4
+    public float secondsPerDirection;
+    public int randomToLookRatio; // 5 would mean: 4 intervals random, then 1 interval look, 0 1 2 3 4 0 1 2 3 4
+    public float speedMultiplier;
 
     private float secondsSoFar;
     private int intervalSoFar;
@@ -34,14 +34,23 @@ public class EnemyController : MonoBehaviour
         if (secondsSoFar == 0 || secondsSoFar > secondsPerDirection)
         { // time to change direction
             secondsSoFar = 0;
+            intervalSoFar = (intervalSoFar + 1) % randomToLookRatio;
 
-            // no intervalSoFar
-            Vector3 lookDirection = (GameUIController.instance.GetPlayerPosition() - transform.position).normalized;
+            if (intervalSoFar == 0) // look direction 
+            {
+                // UnityEngine.Debug.Log("Using look direction");
 
-            float xDir = QuickRandomHelper() * randomToLookRatio + lookDirection.x; //(QuickRandomHelper() * randomToLookRatio + lookDirection.x) / (randomToLookRatio + 1);
-            float yDir = QuickRandomHelper() * randomToLookRatio + lookDirection.y; // (QuickRandomHelper() * randomToLookRatio + lookDirection.y) / (randomToLookRatio + 1);
+                currDirection = (GameUIController.instance.GetPlayerPosition() - transform.position).normalized;
 
-            currDirection = new Vector2(xDir, yDir).normalized;
+                // UnityEngine.Debug.Log("player: " + GameUIController.instance.GetPlayerPosition());
+                // UnityEngine.Debug.Log("self: " + transform.position);
+                // UnityEngine.Debug.Log("diff: " + currDirection);
+            }
+            else // random direction
+            {
+                // UnityEngine.Debug.Log("Using random direction");
+                currDirection = new Vector3(QuickRandomHelper(), QuickRandomHelper(), 0).normalized;
+            }
         }
         else
         {

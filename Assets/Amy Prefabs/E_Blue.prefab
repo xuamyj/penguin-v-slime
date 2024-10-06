@@ -180,7 +180,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &978035340785556860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,4 +195,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   secondsPerDirection: 0.9
   randomToLookRatio: 2
-  speedMultiplier: 1
+  speedMultiplier: 0.4
