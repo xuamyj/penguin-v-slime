@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 770180375271976046}
   - component: {fileID: 3002742748558087835}
   - component: {fileID: 6157937384253426001}
+  - component: {fileID: 978035340785556860}
   m_Layer: 0
   m_Name: E_Blue
   m_TagString: Enemy
@@ -180,3 +181,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &978035340785556860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7271271115734168551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8fb23a31d2c3493a80d226f8f1c215a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsPerDirection: 0.9
+  randomToLookRatio: 2
+  speedMultiplier: 1

@@ -19,6 +19,8 @@ public class GameUIController : MonoBehaviour
     private float timeStat;
     private int highScoreStat;
 
+    public PlayerController player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,12 @@ public class GameUIController : MonoBehaviour
 
         // play game
         ShowTitleScreen();
+    }
+
+    /* ---- PLAYER POSITION ---- */
+    public Vector3 GetPlayerPosition()
+    {
+        return player.transform.position;
     }
 
     /* ---- STATUS ---- */
