@@ -2840,7 +2840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &908406964
 Transform:
   m_ObjectHideFlags: 0
@@ -5371,6 +5371,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1649904429}
   - component: {fileID: 1649904428}
+  - component: {fileID: 1649904430}
   m_Layer: 0
   m_Name: Game UI Controller
   m_TagString: GameController
@@ -5395,6 +5396,7 @@ MonoBehaviour:
   mainGame: {fileID: 908406963}
   mainUIScreen: {fileID: 2082789159}
   GameOverScreen: {fileID: 299787122}
+  totalLives: 3
 --- !u!4 &1649904429
 Transform:
   m_ObjectHideFlags: 0
@@ -5410,6 +5412,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1649904430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649904427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a312f9909fa41a09264661043191e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainUISlimesCleared: {fileID: 1152783158}
+  mainUITime: {fileID: 1095456656}
+  mainUILives: {fileID: 1312004825}
+  gameOverTimePlayed: {fileID: 1999540542}
+  gameOverSlimesCleared: {fileID: 1565928309}
+  gameOverHighScore: {fileID: 673312495}
 --- !u!1 &1651551477
 GameObject:
   m_ObjectHideFlags: 0
@@ -6835,7 +6855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2082789160
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7376,10 +7396,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7438094068651342341, guid: 36ec327daeff8412f818e23e5d0bca70, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7459,6 +7475,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6078128870728106258, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078128870728106258, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078128870728106258, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.6666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6078128870728106258, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15199316
       objectReference: {fileID: 0}
@@ -7500,7 +7528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6078128870728106258, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7243110377933969779, guid: ae10b1c2afab84ea5b2cf4945d9fb2ca, type: 3}
       propertyPath: XToYRatio
@@ -7695,6 +7723,18 @@ PrefabInstance:
     - target: {fileID: 3734018775666692029, guid: 115dff63e6fb6431f8a02f08aa952571, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882845773278641129, guid: 115dff63e6fb6431f8a02f08aa952571, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.0000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882845773278641129, guid: 115dff63e6fb6431f8a02f08aa952571, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5882845773278641129, guid: 115dff63e6fb6431f8a02f08aa952571, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5882845773278641129, guid: 115dff63e6fb6431f8a02f08aa952571, type: 3}
       propertyPath: m_LocalPosition.x

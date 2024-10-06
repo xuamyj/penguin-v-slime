@@ -7,16 +7,14 @@ public class PlayerController : MonoBehaviour
 {
     Camera mainCamera;
 
-    // DEBUG TODO
-    private GameUIController gameUIController;
+    // private GameUIController gameUIController; // before static
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
 
-        // DEBUG TODO
-        gameUIController = GameObject.FindWithTag("GameController").GetComponent<GameUIController>();
+        // gameUIController = GameObject.FindWithTag("GameController").GetComponent<GameUIController>(); // before static
     }
 
     // Update is called once per frame
@@ -32,8 +30,13 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            // DEBUG TODO
-            gameUIController.ShowGameOverScreen();
+            GameUIController.instance.EditNumLives(-1);
+
+            if (GameUIController.instance.IsGameOver())
+            {
+                // gameUIController.ShowGameOverScreen(); // before static
+                GameUIController.instance.ShowGameOverScreen();
+            }
         }
     }
 }

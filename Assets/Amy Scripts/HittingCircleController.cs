@@ -23,4 +23,14 @@ public class HittingCircleController : MonoBehaviour
 
         transform.position = mousePosition;
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            GameUIController.instance.EditSlimesCleared(1);
+
+            Destroy(other.gameObject);
+        }
+    }
 }
