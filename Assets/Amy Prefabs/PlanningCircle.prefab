@@ -143,3 +143,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a86b444cb6594aeda8055a7a207a93e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  XToYRatio: 1.5
+  growSpeed: 1.2
+  MouseLeftButtonAction:
+    m_Name: Mouse Left Button
+    m_Type: 1
+    m_ExpectedControlType: Button
+    m_Id: 7f9fa14f-7bac-40d7-8006-888bbd27e15c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 0e70bf6d-f764-48b6-af8d-5e32315ce951
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Mouse Left Button
+      m_Flags: 0
+    m_Flags: 0
