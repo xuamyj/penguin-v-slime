@@ -5,7 +5,7 @@ using UnityEngine;
 public class HittingCircleController : MonoBehaviour
 {
     /* ---- Mouse click hold letgo ----*/
-    public float hittingToPlanningRatio;
+    // public float hittingToPlanningRatio;
 
     Camera mainCamera;
 
@@ -30,6 +30,8 @@ public class HittingCircleController : MonoBehaviour
         {
             GameUIController.instance.EditSlimesCleared(1);
 
+            // animator.set(other.AHAnimation)
+            // 
             Destroy(other.gameObject);
         }
     }

@@ -14,6 +14,8 @@ public class PlanningCircleController : MonoBehaviour
 
     Camera mainCamera;
 
+    public float hittingToPlanningRatio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +49,7 @@ public class PlanningCircleController : MonoBehaviour
         }
         else if (MouseLeftButtonAction.WasReleasedThisFrame()) // mouseRelease
         {
+            DestroySlimes();
             scaleY = 0.0f;
             scaleX = 0.0f;
         }
@@ -56,6 +59,19 @@ public class PlanningCircleController : MonoBehaviour
             scaleX = XToYRatio * scaleY;
         }
         transform.localScale = new Vector3(scaleX, scaleY, 1.0f);
+    }
+
+    private void DestroySlimes()
+    {
+        Collider2D[] slimes = Physics2D.OverlapBoxAll(transform.position, hittingToPlanningRatio * new Vector2(scaleX, scaleY), 0);
+        foreach (Collider2D slime in slimes)
+        {
+            if (slime.CompareTag("Enemy"))
+            {
+                Debug.Log(slime.gameObject.name);
+                GameObject.Destroy(slime.gameObject);
+            }
+        }
     }
 
     // FixedUpdate() is only for Rigidbodys
